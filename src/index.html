@@ -5,37 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>image search</title>
-
      <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
-     <div class="preloader">
+    <div class="preloader">
       <span class="loader"></span>
     </div>
 
-    <div class="">
-        <form class="search-form" id="search-form">
-  <input
-    type="text"
-    name="searchQuery"
-    autocomplete="off"
-    placeholder="Search images..."
-  />
-  <button type="submit">Search</button>
-</form>
+    <div class="container">
+      <form class="search-form" id="search-form">
+        <div class="form-container">
+          <input
+            class="form-input"
+            type="text"
+            name="searchQuery"
+            autocomplete="off"
+            placeholder="Search images..."
+          />
+          <button class="form-btn" type="submit">Search</button>
+          </button>
+        </div>
+      </form>
     </div>
 
-    <div class=" gallery">
-        <!-- картки зображень-->
+    <div class="gallery">
+      <!-- Картки зображень -->
     </div>
 
-    <div class="infititi-scroll"
-    ></div>
-    
+    <div class="infitity-scroll"></div>
 
-    <div class="bacdrop is-hidden">
-       <div class="spinner  js-spinnr"></div>
+    <div class="backdrop is-hidden">
+      <div class="spinner js-spinner"></div>
     </div>
 
     <script type="module" src="./index.js"></script>

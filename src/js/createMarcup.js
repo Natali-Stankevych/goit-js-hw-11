@@ -1,26 +1,38 @@
-export function createMarcup(marcup) {
-    return marcup
-        .map(
-            ({
-                webformatURL,
-                largeImageURL,
-                tags,
-                likes,
-                views,
-                comments,
-                downloads,
-            }) => {
-                return `<div class="photo-card">
-    <a class="photo-link" href="${largeImageURL} >
-        <img class="photo" src="${webformatURL}" alt="${tags}" loading="lazy"">
+export function createMarkupImg(markup) {
+  return markup
+    .map(
+      ({
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) => {
+        return `
+
+  <div class="photo-card">
+    <a class="photo-link" href="${largeImageURL}">
+      <img class="photo" src="${webformatURL}" alt="${tags}" loading="lazy"/>
     </a>
-    <ul class="info">
-        <li class="info-item"><b>likes</b>${likes}</li>
-        <li class="info-item"><b>views</b>${views}</li>
-        <li class="info-item"><b>comments</b>${comments}</li>
-        <li class="info-item"><b>downloads</b>${downloads}</li>
-    </ul>
-</div>`
-            }
-        ).join('');
+      <div class="info">
+     <p class="info-item">
+        <b>Likes</b>${likes}
+      </p>
+     <p class="info-item">
+        <b>Views</b>${views}
+      </p>
+      <p class="info-item">
+        <b>Comments</b>${comments}
+     </p>
+      <p class="info-item">
+       <b>Downloads</b>${downloads}
+     </p>
+  </div>
+</div>
+`;
+      }
+    )
+    .join('');
 }

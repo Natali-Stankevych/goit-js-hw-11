@@ -11,3 +11,4 @@ export function spinnerStop() {
         refs.body.classList.add('Loading');
     }, 1000);
 }
+

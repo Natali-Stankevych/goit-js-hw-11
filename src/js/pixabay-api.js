@@ -1,40 +1,39 @@
-import axios from "axios";
+import axios from 'axios';
 
 const BASE_URL = 'https://pixabay.com/api/';
 
 export class PixabayApiImages {
-    constructor() {
-        this.searhQwery = '';
-        this.page = 1;
-        this.par_page = 40;
-        this.total_page = 0;
-    }
+  constructor() {
+    this.searchQuery = '';
+    this.page = 1;
+    this.per_page = 40;
+    this.totalPages = 0;
+  }
 
-
-  async getImages() { 
-    const searchParams = new URLSearchParams ({
-        key: '36725043-858335a74b16948d2f069973a',
-        q: `${this.searhQwery}`,
-        image_type: 'photo',
-        orientation: 'horizontal',
-        safesearch: true,
-        per_page: `${this.par_page}`,
-        page: `${this.page}`,
-
+  async getImages() {
+    const searchParams = new URLSearchParams({
+      key: '36725043-858335a74b16948d2f069973a',
+      q: `${this.searchQuery}`,
+      image_type: 'photo',
+      orientation: 'horizontal',
+      safesearch: true,
+      per_page: `${this.per_page}`,
+      page: `${this.page}`,
     });
 
     const { data } = await axios.get(`${BASE_URL}?${searchParams}`);
     return data;
-}
+  }
 
- incrementPage() {
+  incrementPage() {
     return (this.page += 1);
-};
+  }
 
-resetPage() {
+  resetPage() {
     return (this.page = 1);
-};
- setTotal(total) {
+  }
+
+  setTotal(total) {
     return (this.totalPages = total);
   }
 
@@ -46,6 +45,4 @@ resetPage() {
     return this.page === Math.ceil(this.totalPages / this.per_page);
   }
 }
-
-
 

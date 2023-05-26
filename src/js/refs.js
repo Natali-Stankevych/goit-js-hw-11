@@ -1,6 +1,6 @@
-export const refs = {
-    form: document.querySelector('#search-form'),
-    gallery: document.querySelector('.gallery'),
-    infititi: document.querySelector('.infititi-scroll'),
-    body: document.querySelector('body')
-}
+export  const refs = {
+  form: document.getElementById('search-form'),
+  gallery: document.querySelector('.gallery'),
+  infitity: document.querySelector('.infitity-scroll'),
+  body: document.querySelector('body'),
+};
